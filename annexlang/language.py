@@ -303,6 +303,8 @@ class OpenWindowStartParty(StartParty):
     
     @property
     def height(self):
+        if 'height_overwrite' in self.protocol.options and 'openwindowstartparty' in self.protocol.options['height_overwrite']:
+            return self.protocol.options['height_overwrite']['openwindowstartparty'], "center,yshift=1ex"
         return "6ex", "center,yshift=1ex"
     
     @property
