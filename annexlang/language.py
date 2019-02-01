@@ -296,8 +296,9 @@ class OpenWindowStartParty(StartParty):
         direction = "east" if self.src.column > self.dest.column else "west"
         src = self.get_pos(self.src.column, self.line)
         self.text_above = "open"
+        self.text_below = getattr(self, 'url', '')
         out = fr"""%% draw open window arrow
-        \draw[annex_open_window_start_party_arrow{self.tikz_extra_style}] ({src}) to  {self.tikz_above} ({self.node_name}.{direction});"""
+        \draw[annex_open_window_start_party_arrow{self.tikz_extra_style}] ({src}) to  {self.tikz_above}  {self.tikz_below} ({self.node_name}.{direction});"""
         out += super().tikz_arrows()
         return out
     
