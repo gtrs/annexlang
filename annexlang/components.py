@@ -369,7 +369,7 @@ class Group(ProtocolObject):
             last_party.fit_string,
         ))
         gid = self.annexid
-        return fr"""\node[annex_group_box,{fit_string}]({gid}) {{}}; \node[anchor=base,above=of {gid}.north,above=-2.5ex,anchor=base] {{{self.name}}};"""
+        return fr"""\node[annex_group_box,{fit_string}]({gid}) {{}}; \node[annex_group_header,anchor=base,above=of {gid}.north,above=-2.5ex,anchor=base] {{{self.name}}};"""
 
 
 class Separator(ProtocolStep):

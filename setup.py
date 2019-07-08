@@ -19,7 +19,7 @@ setup(
     zip_safe=False,
     scripts=['bin/annex-convert'],
     install_requires=[
-        'pyyaml',
+        'pyyaml==3.13',
     ],
       
     classifiers=[

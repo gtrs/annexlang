@@ -218,6 +218,7 @@ class EndParty(ProtocolStep):
     skip_number = True
     type = 'end_party'
     endsparty = True
+    label = ""
 
     def _init(self, *args, **kwargs):
         super()._init(*args, **kwargs)
@@ -225,7 +226,10 @@ class EndParty(ProtocolStep):
     
     def tikz(self):
         pos = self.get_pos(self.party.column, self.line)
-        text = self.party.name
+        if self.label:
+            text = self.label
+        else:
+            text = self.party.name
         out = fr"""\node[name={self.node_name},annex_{self.type}_box,{self.party.style}] at ({pos}) {{{text}}};"""
         return out
 
